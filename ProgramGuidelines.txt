@@ -1,0 +1,34 @@
+Program Guidelines
+Following these guidelines will minimize the time you spend debugging your program, and at the same time ensure that you earn the most points possible for your work.
+
+1) I can only accept assignment submissions through the Canvas Assignments tool. I cannot accept programs submitted through email nor through Private Message.
+
+2) Your program must solve the problem as stated in the assignment instructions. These assignment instructions are treated as program specifications. If you have any questions about what the assignment instructions mean, please ask in the public Discussion.
+
+3) Only submit a complete, running program. If you are having trouble getting your program to run, look on the Home page of this site to find places to get help.
+
+4) Every program must be submitted in the exact same ".py" file(s) that the Python interpreter sees. I will not review files with extensions other than ".py". You must also submit ALL source code files required to run your solution to the assignment.
+
+5) You must also submit a recording of what happens when you run your program. The output from your program will appear in the bottom of the PyCharm window, together with any user input. You can paste this recording into the bottom of your source code file or you can paste it into a separate file that you attach to the assignment submission along with your source code file. Submitting a program together with a recording of a different program running is a serious breach of academic honesty.
+
+6) Every program must have a comment at the top of the file that tells what the program does. This comment serves to identify the file, so that you can easily tell what a particular program does without having to run it. Every function and every method must also have a comment at the top that tells what the function or method does. The comment must explain what the parameters are used for, what value gets returned (if any), and whether the function or method does any reading or writing to the shell. When you define a new class, the class must have a comment that starts with the words "One object of this class represents.."
+
+7) No function or method can be longer than 30 lines. If you find yourself writing more than 30 lines of code, you need to split the code into logically separate functions or methods. Please begin your function or method name with a lower case letter.
+
+8) Choose variable names that describe what the variable is storing. Also choose function and method names that describe what the method does. If you spend just a moment to think of a good mnemonic, your program will be much more readable and therefore modifiable. Please begin your variable names and your method and function names with a lower case letter.
+
+9) If you include code in your solution that you found online, you must put the URL in a comment that tells where that code came from (otherwise you will receive a 0 with no chance to resubmit.)
+
+10) When you store constant data (that is, values that will not change) in a variable, name that variable in ALL CAPITAL LETTERS. For example, SALESTAXRATE = 0.09
+
+11) Do not use "while (true):"  to form a loop. Instead, after the word "while" you must write the condition for repeating the loop. For example, write "while (index < limit):" so that the reader can easily see the circumstances under which the loop will repeat another time.
+
+12) Do not use "break" nor "continue". These statements create unstructured code that is difficult to read and debug. https://en.wikipedia.org/wiki/Structured_programming#Early_exit (Links to an external site.)
+
+13) When you resubmit a program, whether it is for a subsequent assignment or to gain more points on the current assignment, you must address ALL comments made by your instructor on your original submission. If you have any questions about this, you must ask in the Discussion forum.
+
+14) There are many ways to write a program. I will be looking for efficient, readable, modifiable, minimalist, correct solutions that meet the due date. The best way to meet these standards are to follow these Program Guidelines.
+
+For another take on a set of Program Guidelines, see Google's:
+
+https://google.github.io/styleguide/pyguide.html
