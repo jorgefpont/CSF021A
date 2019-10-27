@@ -86,7 +86,6 @@ def spell7to9dn(num):
     # easier to convert to string in order to extract
     # the three 3-digit parts
     numAsString = str(num)
-    numDigits = len(numAsString)
 
     # most significant
     msn = int(numAsString[-9:-6])
@@ -114,8 +113,6 @@ def spell(num):
     parameter is input integer,
     returns spelled number"""
 
-    print(num)
-
     if num < 0:  # make number positive and set negative flag
         isNegative = True
         num = abs(num)
@@ -134,9 +131,8 @@ def spell(num):
     elif 7 <= numDigits <= 9:
         result = spell7to9dn(num)
 
-    elif numDigits > 9:
+    else:
         result = 'number out of input range'
-
 
 
     if isNegative == True:
@@ -146,11 +142,13 @@ def spell(num):
 
 
 # =========
-# test list
-testList = [0, 3, -9, 10, 13, -19, 23, 40, -90, 99, 110, -123, 200, 256, 999,
-            1000, -2000, 5678, -12456, 250456, -250456,
-            678956234, 600000000, -600234000, 600000234, 600234001, 999999999,
-            1000000000]
-
-for num in testList:
-    spell(num)
+######## TESTs function spell()  ###########
+print (spell (123456789) )
+print (spell (456678) )
+print (spell (66) )
+print (spell (-123456789) )
+print (spell (-456678) )
+print (spell (-418) )
+print (spell (-13456678) )
+print (spell (0) )
+print (spell (10004) )

@@ -4,14 +4,18 @@ containing the number spelled out in English.
 Number must be a whole number between -999,999,999 and 999,999,999
 """
 
-ones = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', \
-        7: 'seven', 8: 'eight', 9: 'nine', 0: 'zero'}
+# ones = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six',
+#       7: 'seven', 8: 'eight', 9: 'nine', 0: 'zero'}
 
-tens = {10: 'ten', 20: 'twenty', 30: 'thirty', 40: 'forty', 50: 'fifty', \
+# changed from dict to tupple
+ones = ('zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',
+        'eight', 'nine')
+
+tens = {10: 'ten', 20: 'twenty', 30: 'thirty', 40: 'forty', 50: 'fifty',
         60: 'sixty', 70: 'seventy', 80: 'eighty', 90: 'ninety'}
 
 teens = {11: 'eleven', 12: 'twelve', 13: 'thirteen', \
-         14: 'fourteen', 15: 'fifteen', 16: 'sixteen', 17: 'seventeen', \
+         14: 'fourteen', 15: 'fifteen', 16: 'sixteen', 17: 'seventeen',
          18: 'eighteen', 19: 'nineteen'}
 
 
@@ -53,6 +57,7 @@ def threeDigit(num):
 def spell3dn(num):
     """spells a number of 1-3 digits. Returns spelled number.
     Parameter is input integer"""
+    global result
     numDigits = len(str(num))
     num = int(num)
 
@@ -66,11 +71,12 @@ def spell3dn(num):
         print('error')
     return result
 
+
 def spell4to6dn(num):
     """Spells the 4th-6th 3 digit number,
     ie the thousands. Returns spelled number.
     Parameter is input integer"""
-    lsn = num % 1000  # most significan bit/number
+    lsn = num % 1000  # most significant bit/number
     msn = num // 1000  # least significant bit/number
 
     if lsn == 0:
@@ -78,6 +84,7 @@ def spell4to6dn(num):
     elif lsn != 0:
         result = f'{spell3dn(msn)} thousand {spell3dn(lsn)}'
     return result
+
 
 def spell7to9dn(num):
     """spells the 7th-9th digit number,
@@ -109,12 +116,11 @@ def spell7to9dn(num):
 
     return result
 
+
 def spell(num):
     """spell a pos or neg number of up to 9 digits
     parameter is input integer,
     returns spelled number"""
-
-    print(num)
 
     if num < 0:  # make number positive and set negative flag
         isNegative = True
@@ -134,23 +140,37 @@ def spell(num):
     elif 7 <= numDigits <= 9:
         result = spell7to9dn(num)
 
-    elif numDigits > 9:
+    else:
         result = 'number out of input range'
 
-
-
     if isNegative == True:
-        print('minus', result)
+        return 'negative ' + result
     else:
-        print(result)
+        return result
 
 
-# =========
-# test list
-testList = [0, 3, -9, 10, 13, -19, 23, 40, -90, 99, 110, -123, 200, 256, 999,
-            1000, -2000, 5678, -12456, 250456, -250456,
-            678956234, 600000000, -600234000, 600000234, 600234001, 999999999,
-            1000000000]
+######## TESTs function spell()  ###########
+print(spell(123456789))
+print(spell(456678))
+print(spell(66))
+print(spell(-123456789))
+print(spell(-456678))
+print(spell(-418))
+print(spell(-13456678))
+print(spell(0))
+print(spell(10004))
 
-for num in testList:
-    spell(num)
+'''
+/home/jorge/csf021aWork/bin/python /home/jorge/csf021a/csf021aWork/module4/hwk4redo.py
+one hundred twenty three million four hundred fifty six thousand seven hundred eighty nine
+four hundred fifty six thousand six hundred seventy eight
+sixty six
+negative one hundred twenty three million four hundred fifty six thousand seven hundred eighty nine
+negative four hundred fifty six thousand six hundred seventy eight
+negative four hundred eighteen
+negative thirteen million four hundred fifty six thousand six hundred seventy eight
+zero
+ten thousand four
+
+Process finished with exit code 0
+'''
