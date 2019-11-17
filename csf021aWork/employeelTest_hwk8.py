@@ -9,8 +9,9 @@ from manager import Manager
 employee1 = Employee("Mickey", "Mouse", "123-12-1234", 100000)
 employee2 = Employee("Minnie", "Mouse", "123-12-1235", 120000)
 mgr1 = Manager("Goofy", "Smith", "123-12-1236", 150000, "Director", 25000)
+mgr2 = Manager("Speedy", "Gonzalez", "666-99-5555", 110000.00, "Sr. Director", 30000.00 )
 
-staffList = [employee1, employee2, mgr1]
+staffList = [employee1, employee2, mgr1, mgr2]
 
 # print the pre-raise staff list
 print("pre-raise payroll:\n")
@@ -28,7 +29,6 @@ for staff in staffList:
     print(staff)
 
 # name comparisons
-
 print(employee1 == employee2)
 print(employee1 == mgr1)
 print(employee2 == mgr1)
@@ -36,5 +36,6 @@ print()
 print(employee1 < employee2)
 print(employee1 < mgr1)
 print(employee2 < mgr1)
+print(mgr1 < mgr2)
 
 
