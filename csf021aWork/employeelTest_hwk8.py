@@ -7,20 +7,11 @@ Also creates a new list ordered by last name
 from employee import Employee
 from manager import Manager
 
-employee1 = Employee()
-employee1.setData("Mickey", "Mouse", "123-12-1234", 100000)
-
-employee2 = Employee()
-employee2.setData("Minnie", "Mice", "123-12-1235", 120000)
-
-employee3 = Employee()
-employee3.setData("Mickey", "Mouse", "555-12-1212", 100000) # a different Mikey Mouse
-
-mgr1 = Manager()
-mgr1.setData("Goofy", "Smith", "123-12-1236", 150000, "Director", 25000)
-
-mgr2 = Manager()
-mgr2.setData("Speedy", "Gonzalez", "666-99-5555", 110000.00, "Sr. Director", 30000.00 )
+employee1 = Employee("Mickey", "Mouse", "123-12-1234", 100000)
+employee2 = Employee("Minnie", "Mice", "123-12-1235", 120000)
+employee3 = Employee("Mickey", "Mouse", "555-12-1212", 100000)
+mgr1 = Manager("Goofy", "Smith", "123-12-1236", 150000, "Director", 25000)
+mgr2 = Manager("Speedy", "Gonzalez", "666-99-5555", 110000.00, "Sr. Director", 30000.00)
 
 staffList = [employee1, employee2, employee3, mgr1, mgr2]
 
