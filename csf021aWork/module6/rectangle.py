@@ -64,34 +64,3 @@ if __name__ == "__main__":
             print(rect[0])
             print(rect[0].area())
             print()
-
-"""
-/home/jorge/csf021aWork/bin/python /home/jorge/csf021a/csf021aWork/module6/hwk6.py
-height = 2, width = 3
-6
-
-error handled -- value error. Cannot have negative height/width
-
-error handled -- value error. Cannot have negative height/width
-
-error handled -- type error. Height/width must be numeric
-
-error handled -- type error. Height/width must be numeric
-
-error handled -- type error. Height/width must be numeric
-
-height = 5.25, width = 6.5
-34.125
-
-height = 5, width = 3.25
-16.25
-
-height = 5.25, width = 3
-15.75
-
-height = 0, width = 0
-0
-
-
-Process finished with exit code 0
-"""

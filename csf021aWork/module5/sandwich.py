@@ -130,7 +130,7 @@ if __name__ == "__main__":
     print(s2.getPrice())
 
 """
-/home/jorge/csf021aWork/bin/python /home/jorge/csf021a/csf021aWork/module5/hwk5.py
+/home/jorge/csf021aWork/bin/python /home/jorge/csf021a/csf021aWork/module5/sandwich.py
 Bennie: not toasted
 Bennie: wheat, not toasted
 Bennie: wheat, Cheddar, not toasted
