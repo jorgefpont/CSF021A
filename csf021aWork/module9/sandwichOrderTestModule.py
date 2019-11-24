@@ -1,10 +1,11 @@
 """
 Tests for Sandwich and Order classes.
-Test for file witing.
+Test for writing the order object to a binary file.
 """
 
 from order import Order
 from sandwich import Sandwich
+import pickle
 
 # create Sandwich objects
 s1 = Sandwich("Joe")
@@ -30,7 +31,7 @@ print(s3)
 print(s3.getPrice())
 
 # create 1 Order object
-# print and get the proce for the order
+# print and get the price for the order
 order = Order()
 print(order)
 order.addSandwich(s1)
@@ -42,4 +43,17 @@ print(order.price())
 order.addSandwich(s3)
 print(order)
 print(order.price())
+
+# test binary file write and read
+datafile = open('orderFile.pkl', 'wb')
+pickle.dump(order, datafile)
+datafile.close()
+
+datafile = open('orderFile.pkl', 'rb')
+copyOfOrder = pickle.load(datafile)
+print()
+print("Copy of order from binary file:")
+print(copyOfOrder)
+print(copyOfOrder.price())   # check the price just in case
+
 

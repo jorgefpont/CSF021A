@@ -1,5 +1,6 @@
 """
-Defines class Order, in file contact.py
+Defines class Order, creating a list of sandwiches
+and its methods
 """
 
 from sandwich import Sandwich
@@ -7,6 +8,7 @@ from sandwich import Sandwich
 class Order:
     """
     One object of class Order stores a number of Sandwich objects
+    in a list
     """
     def __init__(self):
         """
@@ -21,6 +23,9 @@ class Order:
         self.orderList.append(newSandwich)
 
     def price(self):
+        """
+        Adds the prices of all sandwich opjects in the order
+        """
         orderTotal = 0
         for item in self.orderList:
             orderTotal = orderTotal + item.getPrice()
