@@ -2,7 +2,7 @@
 Defines class Order, in file contact.py
 """
 
-import sandwich
+from sandwich import Sandwich
 
 class Order:
     """
@@ -20,6 +20,12 @@ class Order:
         """
         self.orderList.append(newSandwich)
 
+    def price(self):
+        orderTotal = 0
+        for item in self.orderList:
+            orderTotal = orderTotal + item.getPrice()
+        return orderTotal
+
     def __str__(self):
         """
         returns a string containing all the sandwiches in the Order
@@ -36,11 +42,24 @@ if __name__ == "__main__":
     s1.setMeat("steak")
     s1.addCondiment("Lettuce")
     print(s1)
+    print(s1.getPrice())
 
     s2 = Sandwich("Mary")
     s2.setCheese("cheddar")
     s2.addCondiment("Mayo")
     print(s2)
+    print(s2.getPrice())
+
+
+    s3 = Sandwich("Elizabeth")
+    s3.setBread("sourdough")
+    s3.setMeat("ham")
+    s3.setCheese("swiss")
+    s3.addCondiment("mayo")
+    s3.addCondiment("mustard")
+    s3.setToasted(True)
+    print(s3)
+    print(s3.getPrice())
 
     order = Order()
     print(order)
@@ -49,3 +68,7 @@ if __name__ == "__main__":
     print(order.price())
     order.addSandwich(s2)
     print(order)
+    print(order.price())
+    order.addSandwich(s3)
+    print(order)
+    print(order.price())
