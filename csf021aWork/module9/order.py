@@ -24,7 +24,7 @@ class Order:
 
     def price(self):
         """
-        Adds the prices of all sandwich opjects in the order
+        Adds the prices of all sandwich objects in the order
         """
         orderTotal = 0
         for item in self.orderList:
@@ -54,7 +54,6 @@ if __name__ == "__main__":
     s2.addCondiment("Mayo")
     print(s2)
     print(s2.getPrice())
-
 
     s3 = Sandwich("Elizabeth")
     s3.setBread("sourdough")
