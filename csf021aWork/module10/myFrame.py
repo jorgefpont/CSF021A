@@ -18,27 +18,36 @@ import tkinter
 class MyFrame(tkinter.Frame):
 
     """
-    class MyFrame is a tkinter.Frame that contains two Buttons and a Label.
-    One Button increments a counter and the other Button quits.
-    The Label is used to give the user information.
+     class MyFrame is the VIEW for a simple program that exemplifies the
+     Model/View/Controller architecture. This View class is a tkinter.Frame
+     that contains two Buttons and a Label. One Button increments a counter
+     and the other Button quits. The Label displays the current value of the counter.
+     Notice that the View never contains a reference to the Model,
+     but it does contain a reference to the Controller.
     """
 
-    def __init__(self):
+    def __init__(self, controller):
         """
         Places the controls onto the Frame.
         """
-        tkinter.Frame.__init__(self)   # initializes the superclass
-
-        # initialize the counter
-        self.counter = 0
-        self.pack()   #  required in order for the Buttons to show up properly
+        tkinter.Frame.__init__(self)
+        self.pack()
+        self.controller = controller
+        # line above ...
+        # saves a reference to the controller so that we can call methods
+        # on the controller object when the user generates events
 
         #set up the increment Button
         self.incrementButton = tkinter.Button(self)
         self.incrementButton["text"] = "Increment"
-        self.incrementButton["command"] = self.addOne
-        # the statement above attaches the event handler addOne() to the incrementButton
+        self.incrementButton["command"] = self.controller.incButtonPressed
         self.incrementButton.pack({"side": "left"})
+
+        #set up the decrement Button
+        self.decrementButton = tkinter.Button(self)
+        self.decrementButton["text"] = "Decrement"
+        self.decrementButton["command"] = self.controller.decButtonPressed
+        self.decrementButton.pack({"side": "left"})
 
         #set up the quit Button
         self.quitButton = tkinter.Button(self)
@@ -51,7 +60,3 @@ class MyFrame(tkinter.Frame):
         self.labelForOutput = tkinter.Label(self)
         self.labelForOutput["text"] = 0
         self.labelForOutput.pack({"side": "left"})
-
-    def addOne(self):
-        self.counter = self.counter + 1
-        self.labelForOutput["text"] = self.counter
